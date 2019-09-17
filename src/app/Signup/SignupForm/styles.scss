@@ -1,0 +1,56 @@
+.signup-form-content {
+  height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  @include responsive(ipadPro) {
+    .col___gb5 { width: 63.6363%!important }
+  }
+
+  @include responsive(ipad) {
+    .col___gb5 { width: 81.8181%!important }
+  }
+
+  @include responsive(iphonePlus) {
+    .col___gb5 { width: 100%!important }
+  }
+
+  .signup-form {
+    @extend .text-input-placeholder;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+
+    input {
+      @extend .text-input;
+      width: 100%;
+      margin-bottom: $margin;
+      color: $white;
+      text-align: center;
+    }
+
+    .auth-errors {
+      @extend .text-label-red;
+      height: 8px;
+      margin-bottom: $margin;
+
+      &:last-of-type { margin-bottom: 34px }
+    }
+
+    .checkbox { margin-top: 12px }
+
+    .button-has-account {
+      width: 100%;
+      padding-top: 34px;
+    }
+
+    .button-forgot-password {
+      position: absolute;
+      bottom: 72px;
+    }
+  }
+}

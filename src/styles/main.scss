@@ -1,0 +1,16 @@
+@import 'resets.scss';
+@import 'fonts.scss';
+@import 'icons.scss';
+@import 'variables.scss';
+@import 'grid.scss';
+@import 'utils.scss';
+@import 'text.scss';
+
+@import '../app/Login/LoginForm/styles.scss';
+@import '../app/ImagesComponent/styles.scss';
+@import '../app/navigation/MainNav/styles.scss';
+@import '../app/UserForm/styles.scss';
+@import '../app/Signup/SignupForm/styles.scss';
+@import '../app/shared/buttons/CustomButton/styles.scss';
+@import '../app/shared/buttons/UploadImageButton/styles.scss';
+

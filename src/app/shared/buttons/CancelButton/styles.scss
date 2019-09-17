@@ -1,0 +1,14 @@
+.cancel-button{
+  @extend .button-reset;
+  @extend .clickable;
+  @include hover-transition($hover-transition, $button-opacity);
+
+  width: 240px;
+  height: 30px;
+  background-color: $white;
+
+  .button-text {
+    @extend .text-label;
+    padding-top: 0.5 * $margin;
+  }
+}

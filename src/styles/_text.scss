@@ -1,0 +1,202 @@
+.text-xl {
+  font-family: $acumin-bold;
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 56px;
+  color: $dark-gray;
+}
+
+.text-l {
+  font-family: $acumin-bold;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 29px;
+  color: $dark-gray;
+}
+
+.text-l-white {
+  @extend .text-l;
+  color: $white;
+}
+
+.text-m {
+  font-family: $acumin-bold;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 29px;
+  color: $dark-gray;
+}
+
+.text-m-white {
+  @extend .text-m;
+  color: $white;
+}
+
+.text-s {
+  font-family: $acumin-bold;
+  font-size: 19px;
+  font-weight: bold;
+  line-height: 29px;
+  color: $dark-gray;
+}
+
+.text-s-white {
+  @extend .text-s;
+  color: $white;
+}
+
+.text-p {
+  font-family: $acumin;
+  font-size: 13px;
+  line-height: 17px;
+  color: $dark-gray;
+}
+
+.text-p-white {
+  @extend .text-p;
+  color: $white!important;
+}
+
+.text-p-gray {
+  @extend .text-p;
+  color: $gray;
+}
+
+.text-label {
+  font-family: $acumin-bold;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 10px;
+  color: $dark-gray;
+}
+
+.text-label-white {
+  @extend .text-label;
+  color: $white;
+}
+
+.text-label-red {
+  @extend .text-label;
+  color: $red;
+}
+
+.text-button {
+  font-family: $acumin;
+  font-size: 10px;
+  letter-spacing: 1.25px;
+  padding-top: 4px;
+  color: $dark-gray;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.text-button-white {
+  @extend .text-button;
+  color: $white;
+}
+
+.text-button-secondary {
+  @extend .text-button;
+  color: $gray;
+}
+
+.text-button-critical {
+  @extend .text-button;
+  color: $red;
+}
+
+.text-button-transparent {
+  @include hover-transition($hover-transition, $button-opacity);
+
+  font-family: $acumin;
+  font-size: 10px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.text-input {
+  @extend .text-p;
+  padding: 0 0 4px 0;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $blue;
+  outline: none;
+}
+
+.text-center { text-align: center }
+
+.uppercase { text-transform: uppercase }
+
+.lowercase { text-transform: lowercase }
+
+.tooltip-text {
+  @extend .text-p;
+  color: $dark-gray;
+  text-align: center;
+  line-height: 20px;
+  padding-top: 1px;
+}
+
+.text-input-placeholder {
+  ::-webkit-input-placeholder { opacity: 1; -webkit-transition: opacity .5s; transition: opacity .5s; }  /* Chrome <=56, Safari < 10 */
+  :-moz-placeholder { opacity: 1; -moz-transition: opacity .5s; transition: opacity .5s; } /* FF 4-18 */
+  ::-moz-placeholder { opacity: 1; -moz-transition: opacity .5s; transition: opacity .5s; } /* FF 19-51 */
+  :-ms-input-placeholder { opacity: 1; -ms-transition: opacity .5s; transition: opacity .5s; } /* IE 10+ */
+  ::placeholder { opacity: 1; transition: opacity .5s; } /* Modern Browsers */
+
+  *:focus::-webkit-input-placeholder { opacity: 0; } /* Chrome <=56, Safari < 10 */
+  *:focus:-moz-placeholder { opacity: 0; } /* FF 4-18 */
+  *:focus::-moz-placeholder { opacity: 0; } /* FF 19-50 */
+  *:focus:-ms-input-placeholder { opacity: 0; } /* IE 10+ */
+  *:focus::placeholder { opacity: 0; } /* Modern Browsers */
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: $gray;;
+    -webkit-box-shadow: none;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  input::placeholder { /* Chrome/Opera/Safari */
+    color: $gray;
+  }
+}
+
+.text-area {
+  @extend .text-p;
+  padding: 0 0 4px 0;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $dark-blue;
+  resize: none;
+  width: 100%;
+  margin-bottom: $margin;
+  color: $dark-blue;
+  border-color: $dark-blue;
+  outline: none;
+  overflow:hidden;
+}

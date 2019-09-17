@@ -1,0 +1,67 @@
+/* == FONTS == */
+$acumin: AcuminPro-Regular,sans-serif;
+$acumin-bold: AcuminPro-Bold,sans-serif;
+
+/* == COLORS == */
+$light-blue: #B3C4DC;
+$blue: #0068FF;
+$dark-blue: #262D38;
+$orange: #F96500;
+$red: #E4001C;
+$green: #006400;
+$light-gray: #FAFAFA;
+$gray: #A2A2A2;
+$dark-gray: #252525;
+$white: #FFF;
+$fake-white: #B5B3B3;
+$border-color-blue: rgba(38,45,56,0.3); // $dark-blue
+$overlay-color: rgba(38,45,56,0.8); // $dark-blue
+$card-overlay: rgba(37, 37, 37, 0.4); // $dark-gray
+$toggle-color: rgba(162,162,162,0.3);
+$shop-highlight-color: rgba(162,162,162,0.2);
+$club-color: #B3C4DC;
+$dota2-color: #F88989;
+$lol-color: #B8885D;
+$ow-color: #F8E051;
+
+/* == MARGINS & PADDINGS == */
+$margin: 8px;
+$main-nav-padding: 48px;
+$mobile-nav-padding: 40px;
+
+/* == GRID VARIABLES == */
+$gutter: 20px;
+$gutter-l: 30px;
+$col-value : 9.0909%; /* 11-column-grid-system */
+// $col-value : 1; /* flex-based-system */
+
+/* == CONTAINER VARIABLES == */
+$container-l: 70.5em;
+$container-m: 61em;
+$container-ipad: 52em;
+
+/* == MEDIA QUERIES == */
+$iphoneSmall: 320px;
+$iphone: 375px;
+$iphonePlus: 414px;
+$ipad: 768px;
+$ipadPro: 1024px;
+$ipadLandscape: 1366px;
+$desktop: 1440px;
+
+/* == TRANSITION VARIABLES == */
+$accordion-transition: max-height 200ms ease-out, height 200ms ease-out;
+$background-transition: background-color 300ms ease-in-out;
+$color-transition: color 300ms ease-in-out;
+$height-transition: height 300ms ease-in-out;
+$hover-transition: opacity 150ms ease-in-out;
+$modal-transition: opacity 150ms;
+$tooltip-transition: visibility 0s, opacity 0.2s linear;
+
+/* == OPACITY VARIABLES == */
+$image-opacity: 0.95;
+$button-opacity: 0.85;
+$overlay-opacity: 0.8;
+$text-opacity: 0.6;
+$not-allowed-opacity: 0.5;
+$click-opacity: 0.4;

@@ -1,0 +1,62 @@
+.custom-button {
+  @extend .clickable;
+  @include hover-transition($hover-transition, $button-opacity);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 130px;
+  border-style: solid;
+  background-color: $white;
+  box-sizing: border-box;
+
+  a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.custom-button-text {
+  @extend .text-label;
+  @extend .user-select-none;
+
+  padding-top: 0.5 * $margin;
+  color: $white;
+
+  &.white { color: $dark-blue }
+}
+
+.filled {
+  &.blue { background-color: $blue }
+  &.red { background-color: $red }
+  &.white { background-color: $white }
+}
+
+.empty {
+  background-color: transparent;
+  .custom-button-text {
+    @extend .text-button-transparent;
+    color: $dark-blue;
+
+    &.white { color: $white }
+    &.red { color: $red }
+  }
+}
+
+.inactive {
+  cursor: default;
+  .custom-button-text{
+    transition: none ;
+  }
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+  &:hover { opacity: 0.7 }
+}

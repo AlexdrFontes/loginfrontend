@@ -1,0 +1,29 @@
+.upload-image-button {
+  @include hover-transition($hover-transition, $button-opacity);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $white;
+
+  .font-icon  {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .button-text {
+    @extend .text-button;
+
+    margin-top: 12px;
+  }
+
+  @media (max-width: $iphonePlus) {
+    flex-direction: row;
+    align-items: center;
+
+    .button-text {
+      margin-top: 0;
+      padding-left: 4px;
+    }
+  }
+}

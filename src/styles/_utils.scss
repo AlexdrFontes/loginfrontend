@@ -1,0 +1,301 @@
+/* == MIXINS == */
+@mixin hover-transition($transition, $value) {
+  transition: $transition;
+  &:hover {
+    @if type-of($value) == 'number' {
+      opacity: $value;
+    } @else if $transition == $color-transition {
+      color: $value;
+    } @else {
+      background-color: $value;
+    }
+  }
+}
+
+/* == CONTAINERS == */
+.main-container {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: $dark-blue;
+}
+
+.upload-button {
+  @include hover-transition($hover-transition, $button-opacity);
+  position: relative;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 25;
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: 20;
+  }
+
+   input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    width: 100%;
+  }
+}
+
+.dropdown {
+  @extend .text-input;
+  margin-top: 5px;
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px solid $dark-gray!important;
+
+  &.is-open .Dropdown-control .Dropdown-arrow {
+    border-color: transparent transparent $dark-gray;
+    border-width: 0 5px 5px;
+  }
+
+  .Dropdown-control {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    box-sizing: border-box;
+    color: $dark-gray;
+    outline: 0;
+    padding: 1px 0;
+    transition: all 200ms ease;
+
+    .Dropdown-placeholder {
+      color: $gray;
+
+      &.is-selected {
+        color: $dark-gray;
+      }
+    }
+
+    .Dropdown-arrow {
+      border-color: $dark-gray transparent transparent;
+      border-style: solid;
+      border-width: 5px 5px 0;
+      content: ' ';
+      display: block;
+      height: 0;
+      position: absolute;
+      right: 0;
+      top: 10px;
+      width: 0
+    }
+  }
+
+  .Dropdown-menu {
+    @extend .user-select-none;
+    background-color: $dark-blue;
+    border: none;
+    box-shadow: 0 1px 0 rgba(0,0,0,.06);
+    box-sizing: border-box;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 1000;
+
+    &::-webkit-scrollbar-track {
+      background-color: $light-gray;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $gray;
+    }
+
+    .Dropdown-option {
+      height: 29px;
+      box-sizing: border-box;
+      color: white;
+      cursor: pointer;
+      display: block;
+      padding: 8px;
+      box-sizing: border-box;
+
+      &.is-selected {
+        background-color: white;
+        color: black;
+      }
+
+      &:hover {
+        background-color: white;
+        color: $dark-blue;
+      }
+    }
+  }
+}
+
+.user-select-none {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.truncate {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-box-shadow {
+  -webkit-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.02);
+  -moz-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.02);
+  box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.02);
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  margin-left: $margin;
+
+  &.up {
+    border-width: 0 3px 6px 3px;
+    border-color: transparent transparent $white transparent;
+  }
+
+  &.down {
+    border-width: 6px 3px 0 3px;
+    border-color: $white transparent transparent transparent;
+  }
+}
+
+.tooltip {
+  @extend .card-box-shadow;
+  opacity: 0;
+  z-index: 4;
+  position: absolute;
+  left: 50%;
+  bottom: -28px;
+  transform: translate(-50%, 0);
+  padding: 0 8px;
+  height: 20px;
+  background-color: $white;
+  transition: $hover-transition;
+}
+
+.button-reset {
+  border: none;
+  padding: unset;
+  outline: none;
+}
+
+.card-loading-animation {
+  animation-name: color;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
+  @keyframes color {
+    0% {
+      background-color: $light-gray;
+    }
+    50% {
+      background-color: #D7DFEB;
+    }
+    100% {
+      background-color: rgba(179,196,220,0.2);
+    }
+  }
+}
+
+.bread-crumb {
+  @extend .text-label;
+  display: flex;
+  align-items: center;
+  color: $dark-blue;
+  a {
+    @include hover-transition($hover-transition,  $text-opacity);
+
+    text-decoration: none;
+    color: $dark-blue;
+  }
+  h4:first-of-type { padding: 0 4px 1px 4px }
+}
+
+.see-page {
+  @extend .text-label;
+  @include hover-transition($hover-transition,  $text-opacity);
+
+  display: flex;
+  align-items: center;
+  color: $dark-blue;
+  a {
+    text-decoration: none;
+    color: $dark-blue;
+  }
+  .eye {
+    width: 21px;
+    height: 14px;
+    margin: 0 0 4px 16px;
+  }
+}
+
+.form-buttons {
+  position: fixed;
+  bottom: 0;
+  left: $col-value;
+  width: 10 * $col-value;
+  height: 48px;
+  padding-left: 6 * $margin;
+  padding-right: $col-value;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $light-gray;
+  box-shadow: 0 -6px 17px -6px rgba(37,37,37,0.03);
+
+  p { @extend .text-p }
+
+  .buttons {
+    display: flex;
+    .custom-button:first-of-type { margin-right: 3 * $margin }
+  }
+
+  @media (max-width: $iphonePlus) {
+    left: 0;
+    width: 100%;
+    height: 200px;
+    padding-left: $col-value;
+    padding-top: 4 * $margin;
+    padding-bottom: 4 * $margin;
+    flex-direction: column;
+
+    .buttons {
+      flex-direction: column;
+      width: 100%;
+      .custom-button {
+        width: 100%;
+        &:first-of-type { margin: 0 0 32px 0 }
+      }
+    }
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}

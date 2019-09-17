@@ -1,0 +1,137 @@
+/* == RESPONSIVE == */
+@mixin responsive($width) {
+  @if $width == desktop {
+    @media only screen and (max-width: $desktop) { @content; }
+  }
+  @if $width == ipadLandscape {
+    @media only screen and (max-width: $ipadLandscape) { @content; }
+  }
+  @else if $width == ipadPro {
+    @media only screen and (max-width: $ipadPro) { @content; }
+  }
+  @else if $width == ipad {
+    @media only screen and (max-width: $ipad) { @content; }
+  }
+  @else if $width == iphonePlus {
+    @media only screen and (max-width: $iphonePlus) { @content; }
+  }
+  @else if $width == iphone {
+    @media only screen and (max-width: $iphone) { @content; }
+  }
+  @else if $width == iphoneSmall {
+    @media only screen and (max-width: $iphoneSmall) { @content; }
+  }
+  // Non-Retina
+  @else if $width == non-retina {
+    @media screen and (-webkit-max-device-pixel-ratio: 1) { @content; }
+  }
+  // Retina Only
+  @else if $width == retina {
+    @media screen and (-webkit-min-device-pixel-ratio: 2) { @content; }
+  }
+  // Retina Only
+  @else if $width == retina3 {
+    @media screen and (-webkit-min-device-pixel-ratio: 3) { @content; }
+  }
+  // Specific max width
+  @else {
+    @media only screen and (max-width: #{$width}px) { @content; }
+  }
+}
+
+
+/* == GRID == */
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  width: 100%;
+}
+
+.column {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@mixin flex($flexnumber) {
+  width: #{$flexnumber};
+}
+
+
+.padding___left{
+  padding-left: 16px;
+  @include responsive(ipad) {
+    padding-left: 10px;
+  }
+  @include responsive(iphonePlus) {
+    padding-left: 8px;
+  }
+}
+.padding___right{
+  padding-right: 16px;
+  @include responsive(ipad) {
+    padding-right: 10px;
+  }
+  @include responsive(iphonePlus) {
+    padding-right: 8px;
+  }
+}
+
+.no___padding___left {
+  padding-left: 0px;
+}
+
+.no___padding___right {
+  padding-right: 0px;
+}
+
+
+.col___gb {
+  @include flex($col-value);
+  box-sizing: border-box;  
+  &.col___gb2 {
+    @include flex($col-value * 2);
+  }
+  &.col___gb3 {
+    @include flex($col-value * 3);
+  }
+  &.col___gb4 {
+    @include flex($col-value * 4);
+  }
+  &.col___gb5 {
+    @include flex($col-value * 5);
+  }
+  &.col___gb55 {
+    @include flex($col-value * 5.5);
+  }
+  &.col___gb6 {
+    @include flex($col-value * 6);
+  }
+  &.col___gb7 {
+    @include flex($col-value * 7);
+  }
+  &.col___gb8 {
+    @include flex($col-value * 8);
+  }
+  &.col___gb9 {
+    @include flex($col-value * 9);
+  }
+  &.col___gb10 {
+    @include flex($col-value * 10);
+  }
+  &.col___gb11 {
+    @include flex($col-value * 11);
+  }
+}
